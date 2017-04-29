@@ -23,7 +23,7 @@ code, or let us know and we will do our best to implement it for you.
 
 ## Fork notes
 
-This repository has been forked from the original dustin10/VichGeographicalBundle
+This repository has been forked from the original vich/geographical-bundle package
 which has not been maintained since 2012. All current PRs against the original repo
 have been merged in to this branch, and we aim to maintain the code from hereon out.
 
