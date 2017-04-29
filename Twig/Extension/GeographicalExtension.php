@@ -52,7 +52,11 @@ class GeographicalExtension extends \Twig_Extension
         
         $funcs = array();
         foreach ($names as $twig => $local) {
-            $funcs[$twig] = new \Twig_Function_Method($this, $local, array('is_safe' => array('html')));
+            if (class_exists('\Twig_SimpleFunction')) {
+                $funcs[] = new \Twig_SimpleFunction($twig, [$this, $local], ['is_safe' => ['html']]);
+            } else {
+                $funcs[$twig] = new \Twig_Function_Method($this, $local, array('is_safe' => array('html')));
+            }
         }
         
         return $funcs;
