@@ -84,9 +84,9 @@ abstract class AbstractMapRenderer implements MapRendererInterface
             return '';
         }
         
-        $html = ' ';
+        $html = '';
         foreach ($map->getContainerAttributes() as $attr => $value) {
-            $html .= sprintf('%s="%s"', $attr, $value);
+            $html .= sprintf(' %s="%s"', $attr, $value);
         }
         
         return $html;
