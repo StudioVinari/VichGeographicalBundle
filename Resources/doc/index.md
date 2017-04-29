@@ -1,30 +1,37 @@
-VichGeographicalBundle
-======================
+StudioVinari/VichGeographicalBundle
+===================================
 
-The VichGeographicalBundle provides automatic geographic coordinate querying for ORM 
+`VichGeographicalBundle` provides automatic geographic coordinate querying for ORM 
 entities and ODM documents. The bundle also provides functionality for rendering 
-of JavaScript maps for these entities in your Symfony2 project using annotations. 
-It also allows for object oriented JavaScript maps to be rendered without 
-using any of the coordinate querying features. The bundle uses Google maps by 
-default, but other maps are always being integrated and you can always write your 
-own map renderer.
+JavaScript maps for these entities in your Symfony2 project using annotations and
+Twig helpers. It also allows for object oriented JavaScript maps to be rendered
+without requiring any of the coordinate querying features.
 
-## Currently Supported Map Renderers
+The bundle uses Google Maps by default, but other maps are always being integrated
+and you are welcome to submit a PR to add your own map renderer at any time.
 
-The following is a list of currently supported JavaScript map renderers. Please 
-do not hesitate to fork this repo and add antoher one!
+## Supported map renderers
 
-```
-Google Maps API v3
-Bing Maps v7
-Leaflet
-```
+The bundle currently supports the following map renderers:
+
+* [Google Maps](https://developers.google.com/maps/) (with optional jQuery awareness)
+* [Bing Maps](https://www.bingmapsportal.com/)
+* [Leaflet](http://leafletjs.com/)
+
+If you would like to use another map renderer, please submit a pull request with the
+code, or let us know and we will do our best to implement it for you.
 
 ## Installation
 
-### Get the bundle
+### Composer
 
-To install the bundle, place it in the `vendor/bundles/Vich/GeographicalBundle`
+The simplest way to install this bundle is with composer:
+
+`composer require studio-vinari/geographical-bundle ~1.0`
+
+### Manual installation
+
+To manually install the bundle, place it in the `vendor/bundles/Vich/GeographicalBundle`
 directory of your project. You can do this by adding the bundle to your composer.json (Symfony 2.1),
 deps file (Symfony 2.0.*), as a submodule, cloning it, or simply downloading the source.
 
@@ -48,14 +55,14 @@ Add to `deps` file:
 
 ```
 [VichGeographicalBundle]
-    git=git://github.com/dustin10/VichGeographicalBundle.git
+    git=git://github.com/StudioVinari/VichGeographicalBundle.git
     target=/bundles/Vich/GeographicalBundle
 ```
 
 Or you may add the bundle as a git submodule:
 
 ``` bash
-$ git submodule add https://github.com/dustin10/VichGeographicalBundle.git vendor/bundles/Vich/GeographicalBundle
+$ git submodule add https://github.com/StudioVinari/VichGeographicalBundle.git vendor/bundles/Vich/GeographicalBundle
 ```
 
 ### Add the namespace to your autoloader
