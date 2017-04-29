@@ -10,6 +10,12 @@ without requiring any of the coordinate querying features.
 The bundle uses Google Maps by default, but other maps are always being integrated
 and you are welcome to submit a PR to add your own map renderer at any time.
 
+# Installation
+
+The simplest way to install this bundle is with composer:
+
+`composer require studio-vinari/geographical-bundle ~1.0`
+
 ## Supported map renderers
 
 The bundle currently supports the following map renderers:
