@@ -266,6 +266,23 @@ vich_geographical:
     query_service: my_custom_service    
 ```
 
+## Overriding the default behaviour of popup info windows in Google maps
+
+By default, when a user click a marker which opens an info window popup, any previously
+opened info windows remain open. If you wish to automatically close the previous open
+info window, simply set the `vich_geographical.google.only_one_info_window` key to `true`
+in `config.yml` as follows:
+
+``` yaml
+# app/config.yml
+vich_geographical:
+    # ...
+    google:
+        only_one_info_window: true
+```
+
+For more information on how Google Maps handles info windows, please see: https://developers.google.com/maps/documentation/javascript/infowindows#close.
+
 Twig Integration
 ================
 
@@ -531,4 +548,11 @@ vich_geographical:
     # if you specify the Bing map renderer then add your api key as follows
     bing:
         api_key: my_api_key
+
+    # if you specify the Google map renderer you can enforce only one open info window
+    # for all markers in the map by setting this attribute to true.
+    # the default value is false, i.e. each marker the user clicks will open a new
+    # window, and all open info windows will need to be manually closed by the user
+    google:
+        only_one_info_window: true
 ```

@@ -46,7 +46,13 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('api_key')->defaultNull()->end()
                     ->end()
                 ->end()
-            ->end()
+                ->arrayNode('google')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('only_one_info_window')->defaultFalse()->end()
+                    ->end()
+                ->end()
+             ->end()
         ;
         
         return $tb;
